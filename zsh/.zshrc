@@ -23,5 +23,42 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+plugins=(
+  git 
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  colored-man-pages
+  eza
+  z
+)
+
+# Aliases for eza (or exa)
+alias eza='exa'
+alias ls='eza'
+alias la='eza -a'
+alias ll='eza -al'
+alias lt='eza --tree'
+
+# Setup fzf
+if [ -f /usr/share/fzf/key-bindings.zsh ]; then
+  source /usr/share/fzf/key-bindings.zsh
+fi
+
+if [ -f /usr/share/fzf/completion.zsh ]; then
+  source /usr/share/fzf/completion.zsh
+fi
+
+# Source zsh-syntaxhighlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Source zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# z
+. /usr/share/z/z.sh
+
+export PAGER=most
+export MANPAGER="most"
+
 export EDITOR=vim
 
