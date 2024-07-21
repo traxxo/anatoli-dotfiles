@@ -1,18 +1,8 @@
 #!/bin/bash
 
-# Terminate already running bar instances
-killall -q polybar
+polybar-msg cmd quit
 
-# Wait until the processes have been shut down
-while pgrep -x polybar >/dev/null; do sleep 1; done
-
-# Launch Polybar on each connected monitor
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload mybar &
-  done
-else
-  polybar --reload mybar &
-fi
+echo "---" | tee -a /tmp/mybar.log
+polybar mybar 2>&1 | tee -a /tmp/mybar.log & disown
 
 echo "Polybar launched on all monitors..."
