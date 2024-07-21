@@ -159,14 +159,10 @@ workspace $ws3 output HDMI-2
 
 # Automatically start applications on specific workspaces
 exec --no-startup-id i3-msg "workspace $ws1; exec alacritty --command neofetch"
-exec --no-startup-id i3-msg "workspace $ws1; exec firefox"
-exec --no-startup-id i3-msg "workspace $ws2; exec alacritty --command cmatrix"
+exec --no-startup-id i3-msg "workspace $ws2; exec alacritty --command unimatrix"
 exec --no-startup-id i3-msg "workspace $ws2; exec alacritty --command htop"
-
-# Open extra windows on specific workspaces if needed
 exec --no-startup-id i3-msg "workspace $ws3; exec firefox"
 exec --no-startup-id i3-msg "workspace $ws3; exec firefox"
-exec --no-startup-id i3-msg "workspace $ws4; exec alacritty"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
