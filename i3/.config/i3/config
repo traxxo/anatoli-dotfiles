@@ -16,6 +16,33 @@ set $mod Mod4
 
 font pango:MesloLGM Nerd Font 12
 
+set $rosewater       #dc8a78
+set $flamingo        #dd7878
+set $pink        #ea76cb
+set $mauve       #8839ef
+set $red         #d20f39
+set $maroon          #e64553
+set $peach       #fe640b
+set $yellow          #df8e1d
+set $green       #40a02b
+set $teal        #179299
+set $sky         #04a5e5
+set $sapphire        #209fb5
+set $blue        #1e66f5
+set $lavender        #7287fd
+set $text        #4c4f69
+set $subtext1        #5c5f77
+set $subtext0        #6c6f85
+set $overlay2        #7c7f93
+set $overlay1        #8c8fa1
+set $overlay0        #9ca0b0
+set $surface2        #acb0be
+set $surface1        #bcc0cc
+set $surface0        #ccd0da
+set $base        #eff1f5
+set $mantle          #e6e9ef
+set $crust       #dce0e8
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -118,7 +145,7 @@ bindsym $mod+a focus parent
 set $ws1 "1:  "
 set $ws2 "2:  "
 set $ws3 "3: 󰈹 "
-set $ws4 4
+set $ws4 "4: 󱃾 " 
 set $ws5 5
 set $ws6 6
 set $ws7 7
@@ -170,6 +197,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+r restart
 
+# color class           border    backgr  text    indicator   child_border
+client.focused          $overlay2 $crust  $text   $teal $sky
+client.unfocused        $red $red $red $red $red
+
 # resize window (you can also use the mouse for that)
 mode "resize" 
     {
@@ -198,8 +229,7 @@ mode "resize"
 
 	bindsym $mod+r mode "resize"
 
-
+exec_always --no-startup-id ~/set-monitors.sh
 exec_always --no-startup-id killall -q polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id ~/set-monitor.sh
-
+exec_always --no-startup-id ~/.local/bin/autotiling.py
