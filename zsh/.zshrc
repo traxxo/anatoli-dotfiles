@@ -23,13 +23,14 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-plugins=(
+plugins+=(
   git 
   zsh-syntax-highlighting
   zsh-autosuggestions
   colored-man-pages
   eza
   z
+  zsh-vi-mode
 )
 
 # Aliases for eza (or exa)
@@ -57,6 +58,11 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # z
 . /usr/share/z/z.sh
 
+# zsh-vi-mode
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+
+zvm_bindkey  viins 'jj' vi-cmd-mode
 export PAGER=most
 export MANPAGER="most"
 
