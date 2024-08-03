@@ -63,6 +63,17 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 
 zvm_bindkey  viins 'jj' vi-cmd-mode
+
+# Load zsh's completion system
+autoload -Uz compinit
+compinit
+
+# Set vi mode
+bindkey -v
+
+# Use the Tab key for autocompletion in vi insert mode
+bindkey -M viins '^I' expand-or-complete
+
 export PAGER=most
 export MANPAGER="most"
 

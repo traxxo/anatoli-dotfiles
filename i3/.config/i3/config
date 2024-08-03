@@ -154,15 +154,9 @@ set $ws9 9
 set $ws10 10
 
 workspace $ws1 output DP-2
-workspace $ws2 output HDMI-1
-workspace $ws3 output HDMI-2
 
 # Automatically start applications on specific workspaces
 exec --no-startup-id i3-msg "workspace $ws1; exec alacritty --command neofetch"
-exec --no-startup-id i3-msg "workspace $ws2; exec alacritty --command unimatrix"
-exec --no-startup-id i3-msg "workspace $ws2; exec alacritty --command htop"
-exec --no-startup-id i3-msg "workspace $ws3; exec firefox"
-exec --no-startup-id i3-msg "workspace $ws3; exec firefox"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -194,8 +188,12 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+r restart
 
 # color class           border    backgr  text    indicator   child_border
-client.focused          $overlay2 $crust  $text   $teal $sky
-client.unfocused        $red $red $red $red $red
+client.focused          $red $red $red $red $red
+client.focused_inactive $blue $blue $blue $blue $blue
+client.unfocused        $yellow $yellow $yellow $yellow $yellow
+
+gaps inner 10
+gaps outer 10
 
 # resize window (you can also use the mouse for that)
 mode "resize" 
@@ -225,7 +223,8 @@ mode "resize"
 
 	bindsym $mod+r mode "resize"
 
-exec_always --no-startup-id ~/set-monitors.sh
+exec --no-startup-id feh ~/Downloads/denys-nevozhai-JPEz680sFvo-unsplash.jpg
+
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id killall -q polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id ~/.local/bin/autotiling.py
