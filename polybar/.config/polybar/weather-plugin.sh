@@ -6,8 +6,8 @@
 
 APIKEY=`cat $HOME/.owm-key`
 # if you leave these empty location will be picked based on your ip-adres
-CITY_NAME='Rome'
-COUNTRY_CODE='IT'
+CITY_NAME='Hannover'
+COUNTRY_CODE='DE'
 # Desired output language
 LANG="en"
 # UNITS can be "metric", "imperial" or "kelvin". Set KNOTS to "yes" if you
@@ -58,7 +58,7 @@ DISPLAY_WIND="yes"
 BEAUFORTICON="yes"
 
 # Display in knots. yes/no
-KNOTS="yes"
+KNOTS="no"
 
 # How many decimals after the floating point
 DECIMALS=0
@@ -67,7 +67,7 @@ DECIMALS=0
 # measurement unit you have set: knots, m/s or mph). Set to 0 if you always
 # want to display wind info. It's ignored if DISPLAY_WIND is false.
 
-MIN_WIND=11
+MIN_WIND=0
 
 # Display the numeric wind force or not. If not, only the wind icon will
 # appear. yes/no
@@ -148,42 +148,42 @@ function setIcons {
         #Thunderstorm
         ICON_COLOR=$COLOR_THUNDER
         if [ $DATE -ge $SUNRISE -a $DATE -le $SUNSET ]; then
-            ICON=""
+            ICON="  "
         else
-            ICON=""
+            ICON="  "
         fi
     elif [ $WID -le 311 ]; then
         #Light drizzle
         ICON_COLOR=$COLOR_LIGHT_RAIN
         if [ $DATE -ge $SUNRISE -a $DATE -le $SUNSET ]; then
-            ICON=""
+            ICON="  "
         else
-            ICON=""
+            ICON="  "
         fi
     elif [ $WID -le 321 ]; then
         #Heavy drizzle
         ICON_COLOR=$COLOR_HEAVY_RAIN
         if [ $DATE -ge $SUNRISE -a $DATE -le $SUNSET ]; then
-            ICON=""
+            ICON="  "
         else
-            ICON=""
+            ICON="  "
         fi
     elif [ $WID -le 531 ]; then
         #Rain
         ICON_COLOR=$COLOR_HEAVY_RAIN
         if [ $DATE -ge $SUNRISE -a $DATE -le $SUNSET ]; then
-            ICON=""
+            ICON="  "
         else
-            ICON=""
+            ICON="  "
         fi
     elif [ $WID -le 622 ]; then
         #Snow
         ICON_COLOR=$COLOR_SNOW
-        ICON=""
+        ICON="  "
     elif [ $WID -le 771 ]; then
         #Fog
         ICON_COLOR=$COLOR_FOG
-        ICON=""
+        ICON="  "
     elif [ $WID -eq 781 ]; then
         #Tornado
         ICON_COLOR=$COLOR_TORNADO
@@ -192,59 +192,59 @@ function setIcons {
         #Clear sky
         if [ $DATE -ge $SUNRISE -a $DATE -le $SUNSET ]; then
             ICON_COLOR=$COLOR_SUN
-            ICON=""
+            ICON="  "
         else
             ICON_COLOR=$COLOR_MOON
-            ICON=""
+            ICON="  "
         fi
     elif [ $WID -eq 801 ]; then
         # Few clouds
         if [ $DATE -ge $SUNRISE -a $DATE -le $SUNSET ]; then
             ICON_COLOR=$COLOR_SUN
-            ICON=""
+            ICON="  "
         else
             ICON_COLOR=$COLOR_MOON
-            ICON=""
+            ICON="  "
         fi
     elif [ $WID -le 804 ]; then
         # Overcast
         ICON_COLOR=$COLOR_CLOUD
-        ICON=""
+        ICON="  "
     else
         ICON_COLOR=$COLOR_ERR
-        ICON=""
+        ICON="  "
     fi
     WIND=""
     WINDFORCE=`echo "$RESPONSE" | jq .wind.speed`
-    WINDICON=""
+    WINDICON="  "
     if [ $BEAUFORTICON == "yes" ];then
         WINDFORCE2=`echo "scale=$DECIMALS;$WINDFORCE * 3.6 / 1" | bc`
         if [ $WINDFORCE2 -le 1 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 1 ] && [ $WINDFORCE2 -le 5 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 5 ] && [ $WINDFORCE2 -le 11 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 11 ] && [ $WINDFORCE2 -le 19 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 19 ] && [ $WINDFORCE2 -le 28 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 28 ] && [ $WINDFORCE2 -le 38 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 38 ] && [ $WINDFORCE2 -le 49 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 49 ] && [ $WINDFORCE2 -le 61 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 61 ] && [ $WINDFORCE2 -le 74 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 74 ] && [ $WINDFORCE2 -le 88 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 88 ] && [ $WINDFORCE2 -le 102 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 102 ] && [ $WINDFORCE2 -le 117 ]; then
-            WINDICON=""
+            WINDICON="  "
         elif [ $WINDFORCE2 -gt 117 ]; then
-            WINDICON=""
+            WINDICON="  "
         fi
     fi
     if [ $KNOTS = "yes" ]; then
@@ -282,11 +282,11 @@ function setIcons {
         WIND="$WIND |"
     fi
     if [ "$UNITS" = "metric" ]; then
-        TEMP_ICON="󰔄 "
+        TEMP_ICON=" 󰔄 "
     elif [ "$UNITS" = "imperial" ]; then
-        TEMP_ICON="󰔅"
+        TEMP_ICON=" 󰔅 "
     else
-        TEMP_ICON="󰔆"
+        TEMP_ICON=" 󰔆 "
     fi
     
     TEMP=`echo "$TEMP" | cut -d "." -f 1`
@@ -317,7 +317,7 @@ if [ $ERROR -eq 0 ]; then
     WIND=""
     TEMP=`echo $RESPONSE | jq .main.temp`
     if [ $DISPLAY_LABEL = "yes" ]; then
-        DESCRIPTION=`echo "$RESPONSE" | jq .weather[0].description | tr -d '"' | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'`" "
+        DESCRIPTION=`echo " $RESPONSE  " | jq .weather[0].description | tr -d '"' | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'`" "
     else
         DESCRIPTION=""
     fi
