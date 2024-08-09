@@ -188,10 +188,14 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+Shift+r restart
 
 # color class           border    backgr  text    indicator   child_border
-client.focused          $red $red $red $red $red
-client.focused_inactive $blue $blue $blue $blue $blue
-client.unfocused        $yellow $yellow $yellow $yellow $yellow
+client.focused           $lavender $lavennder $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
+# Gap sizes
 gaps inner 10
 gaps outer 10
 
@@ -223,7 +227,7 @@ mode "resize"
 
 	bindsym $mod+r mode "resize"
 
-exec --no-startup-id feh ~/Downloads/denys-nevozhai-JPEz680sFvo-unsplash.jpg
+exec --no-startup-id feh --bg-scale ~/Downloads/denys-nevozhai-JPEz680sFvo-unsplash.jpg
 
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id killall -q polybar
