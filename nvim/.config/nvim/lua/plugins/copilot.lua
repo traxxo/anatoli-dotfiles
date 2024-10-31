@@ -10,7 +10,12 @@ return {
 					accept = "<C-l>",
 					next = "<C-]>",
 					prev = "<C-[>",				}
-			}
+			},
+			filetypes = {
+
+				yaml = true,
+				markdown = true,
+			},
 		})
 	end,
-    }
+}
