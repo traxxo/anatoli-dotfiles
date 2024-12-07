@@ -159,8 +159,7 @@ workspace $ws1 output DP-2
 exec --no-startup-id feh --bg-scale ~/Downloads/denys-nevozhai-JPEz680sFvo-unsplash.jpg
 
 
-# Automatically start applications on specific workspaces
-exec --no-startup-id i3-msg "workspace $ws1; exec alacritty --command neofetch"
+# Automatically start applications on specific workspaceeofetch"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -234,3 +233,5 @@ mode "resize"
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id killall -q polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id i3-msg "workspace $ws1; exec kitty neofetch"
+

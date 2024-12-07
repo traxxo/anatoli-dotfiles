@@ -17,6 +17,7 @@ zstyle :compinstall filename '/home/anatoli/.zshrc'
 
 autoload -Uz compinit
 compinit
+#
 # End of lines added by compinstall
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
@@ -28,6 +29,7 @@ plugins+=(
   git 
   zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-completions
   colored-man-pages
   eza
   z
@@ -41,6 +43,13 @@ alias la='eza -a'
 alias ll='eza -al'
 alias lt='eza --tree'
 
+# Aliases for k8s
+alias k='kubectl'
+alias kg='kubectl get'
+alias kd='kubectl describe'
+alias klo='kubectl logs -f'
+alias klof='kubectl logs -f --tail=100'
+#
 # Setup fzf
 if [ -f /usr/share/fzf/key-bindings.zsh ]; then
   source /usr/share/fzf/key-bindings.zsh

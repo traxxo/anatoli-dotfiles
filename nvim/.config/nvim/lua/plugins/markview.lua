@@ -1,12 +1,10 @@
 return {
     "OXY2DEV/markview.nvim",
-    ft = "markdown",
+    lazy = false,      -- Recommended
+    -- ft = "markdown" -- If you decide to lazy-load anyway
 
     dependencies = {
-        -- You may not need this if you don't lazy load
-        -- Or if the parsers are in your $RUNTIMEPATH
         "nvim-treesitter/nvim-treesitter",
-
         "nvim-tree/nvim-web-devicons"
-    },
+    }
 }
