@@ -38,9 +38,9 @@ plugins+=(
 
 # Aliases for eza (or exa)
 alias eza='exa'
-alias ls='eza --classify --icons --grid -lh'
-alias la='eza -a'
-alias ll='eza -al'
+alias ls='eza --classify --icons --grid '
+alias la='eza --classify --icons --grid -a'
+alias ll='eza --classify --icons --grid -al'
 alias lt='eza --tree'
 
 # Aliases for k8s

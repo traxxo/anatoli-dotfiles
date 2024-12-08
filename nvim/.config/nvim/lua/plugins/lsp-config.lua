@@ -25,6 +25,7 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({})
 			lspconfig.ruff_lsp.setup({})
+			lspconfig.ruff.setup({})
 			lspconfig.ansiblels.setup({})
 			lspconfig.dockerls.setup({})
 			lspconfig.sqls.setup({})

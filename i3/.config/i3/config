@@ -156,7 +156,7 @@ set $ws10 10
 workspace $ws1 output DP-2
 
 # start background image with feh
-exec --no-startup-id feh --bg-scale ~/Downloads/denys-nevozhai-JPEz680sFvo-unsplash.jpg
+exec --no-startup-id feh --bg-fill --randomize ~/Pictures/wallpapers/*
 
 
 # Automatically start applications on specific workspaceeofetch"
@@ -233,5 +233,5 @@ mode "resize"
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id killall -q polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id i3-auto-layout
 exec --no-startup-id i3-msg "workspace $ws1; exec kitty neofetch"
-

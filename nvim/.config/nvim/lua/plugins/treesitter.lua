@@ -3,7 +3,8 @@ return
 		config = function()
 			local config = require("nvim-treesitter.configs")
 			config.setup({
-				ensure_installed = {"lua", "python", "html"},
+				ensure_installed = {"lua", "python", "sql", "html"},
+				auto_install = true,
 				highlight = { enable = true },
 				indent = { enable = true},
 			})
