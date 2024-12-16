@@ -231,6 +231,7 @@ mode "resize"
 	bindsym $mod+r mode "resize"
 
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
-exec_always --no-startup-id i3-auto-layout autolayout
+exec_always --no-startup-id i3-msg i3-autolayout autolayout && sleep 3;
 exec_always --no-startup-id killall -q polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id i3-msg "workspace 1:  ; exec kitty --hold unimatrix && sleep 0.1 && split h; exec kitty --hold dua; exec kitty --hold htop; split h; exec kitty --hold neofetch"
