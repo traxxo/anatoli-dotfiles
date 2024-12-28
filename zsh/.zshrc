@@ -65,6 +65,9 @@ alias t='tmux'
 # Alias for lazygit
 alias lg='lazygit'
 
+# alias terraform
+alias tf='terraform'
+
 
 # Setup fzf
 if [ -f /usr/share/fzf/key-bindings.zsh ]; then
