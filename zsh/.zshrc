@@ -50,24 +50,13 @@ alias kd='kubectl describe'
 alias klo='kubectl logs -f'
 alias klof='kubectl logs -f --tail=100'
 
-# Aliases for neovim
-alias nv='nvim'
-
-# Aliases for git
+# basic cli alisaes
 alias g='git'
-
-# Aliases for docker
 alias d='docker'
-
-# Aliases for tmux
 alias t='tmux'
-
-# Alias for lazygit
 alias lg='lazygit'
-
-# alias terraform
 alias tf='terraform'
-
+alias nv='nvim'
 
 # Setup fzf
 if [ -f /usr/share/fzf/key-bindings.zsh ]; then
