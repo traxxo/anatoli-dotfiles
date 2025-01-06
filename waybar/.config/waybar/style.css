@@ -26,12 +26,12 @@
 }
 
 #workspaces button.active {
-  color: @sky;
+  color: @peach;
   border-radius: 1rem;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
+  color: @sky;
   border-radius: 1rem;
 }
 
@@ -52,18 +52,6 @@
   color: @blue;
   border-radius: 0px 1rem 1rem 0px;
   margin-right: 1rem;
-}
-
-#battery {
-  color: @green;
-}
-
-#battery.charging {
-  color: @green;
-}
-
-#battery.warning:not(.charging) {
-  color: @red;
 }
 
 #backlight {

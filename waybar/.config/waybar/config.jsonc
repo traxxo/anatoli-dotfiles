@@ -3,15 +3,22 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces"],
-    "modules-center": ["custom/music", "custom/weather"],
-    "modules-right": ["pulseaudio", "backlight", "clock", "tray", "custom/lock", "custom/power"],
-    "wlr/workspaces": {
-         "disable-scroll": true,
-         "sort-by-name": true,
-         "format": " {icon} ",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["pulseaudio","custom/music", "custom/weather"],
+    "modules-right": ["custom/cpu", "custom/memory", "clock", "custom/lock", "custom/power"],
+    "hyprland/workspaces": {
+         "format": "{name}  {icon}",
+	 "format-focused": "{name}  {icon}",
+	"format-window-separator": " ",
          "format-icons": {
-             "default": "",
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "",
+		"5": "",
+		"Kubernetes": "",
+		"Music": "",
+                "default": "",
          },
      },
     "tray": {
@@ -31,16 +38,11 @@
         "timezone": "Europe/Dubai",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": " {:%d/%m/%Y}",
-        "format": " {:%H:%M}"
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format": "  {:%d/%m/%Y %H:%M}",
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "format-muted": "",
         "format-icons": {
             "default": ["", "", " "]
@@ -56,59 +58,6 @@
         "tooltip": false,
         "on-click": "wlogout &",
         "format": "襤"
-    }
-}con}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -192,39 +141,12 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
     "custom/weather" : {
 	"format": "{icon} {temperature}°C",
-	"exec": "wttrbar --location Hannover
+	"exec": "wttrbar --location Hannover",
 	"interval": 600,
 	"tooltip": true,
 	"tooltip-format": "{description}\n{temperature}°C\n{humidity}% humidity\n{wind_speed}m/s wind",
-	"format-icons": {
-	    "clear sky": "盛",
-	    "few clouds": "瘟",
-	    "scattered clouds": "瘟",
-	    "broken clouds": "瘟",
-	    "overcast clouds": "瘟",
-	    "light rain": "殺",
-	    "moderate rain": "殺",
-	    "heavy intensity rain": "殺",
-	    "very heavy rain": "殺",
-	    "extreme rain": "殺",
-	    "freezing rain": "殺",
-	    "light intensity shower rain": "殺",
-	    "shower rain": "殺",
-	    "heavy intensity shower rain": "殺",	
 },
     "custom/power": {
         "format" : " ⏻ ",
