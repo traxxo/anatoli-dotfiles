@@ -50,6 +50,11 @@ alias kd='kubectl describe'
 alias klo='kubectl logs -f'
 alias klof='kubectl logs -f --tail=100'
 
+# Aliases for Ansible
+alias ap='ansible-playbook'
+alias av='ansible-vault'
+alias ag='ansible-galaxy'
+
 # basic cli alisaes
 alias g='git'
 alias d='docker'
