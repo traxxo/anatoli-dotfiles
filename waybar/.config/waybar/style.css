@@ -2,8 +2,12 @@
 
 * {
   font-family: FantasqueSansMono Nerd Font;
-  font-size: 17px;
+  font-size: 20px;
   min-height: 0;
+  border-radius: 5px;
+  margin-right: 3px;
+  margin-left: 3px;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #waybar {
@@ -13,78 +17,77 @@
 }
 
 #workspaces {
-  border-radius: 1rem;
-  margin: 5px;
-  background-color: @surface0;
+  background-color: @mantle;
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 #workspaces button {
-  color: @lavender;
-  border-radius: 1rem;
-  padding: 0.4rem;
+  background: @base;
+  color: @blue;
 }
 
 #workspaces button.active {
-  color: @peach;
-  border-radius: 1rem;
+  color: @base;
+  background: @peach;
 }
+
 
 #workspaces button:hover {
-  color: @sky;
-  border-radius: 1rem;
+  color: @lavender;
+  background: @lavender;
 }
 
-#custom-music,
-#tray,
-#backlight,
-#clock,
-#battery,
-#pulseaudio,
-#custom-lock,
-#custom-power {
-  background-color: @surface0;
-  padding: 0.5rem 1rem;
-  margin: 5px 0;
+#custom-os_button {
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    color: @base;
+    background: @sapphire;
+}
+
+#custom-os_button:hover {
+    background: @green;
+    color: @text;
 }
 
 #clock {
-  color: @blue;
-  border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
-}
-
-#backlight {
-  color: @yellow;
-}
-
-#backlight, #battery {
-    border-radius: 0;
-}
-
-#pulseaudio {
-  color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
-}
-
-#custom-music {
-  color: @mauve;
-  border-radius: 1rem;
-}
-
-#custom-lock {
-    border-radius: 1rem 0px 0px 1rem;
-    color: @lavender;
+  background: @green;
+  color: @base;
 }
 
 #custom-power {
-    margin-right: 1rem;
-    border-radius: 0px 1rem 1rem 0px;
-    color: @red;
+  background: @maroon;
+  color: @base;
 }
 
-#tray {
-  margin-right: 1rem;
-  border-radius: 1rem;
+#custom-power:hover {
+  color: @text;
+  background: @red;
 }
+
+#custom-weather {
+  background: @blue;
+  color: @base;
+}
+
+#custom-weather:hover {
+  color: @blue;
+  background: @base;
+}
+
+#cpu {
+  background: @yellow;
+  color: @base;
+}
+
+#memory {
+  background: @teal;
+  color: @base;
+}
+
+#disk {
+  background: @mauve;
+  color: @base;
+}
+
