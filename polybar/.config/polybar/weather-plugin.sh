@@ -22,22 +22,51 @@ LANG="en"
 
 UNITS="metric"
 
+# Catppuccin Mocha CONST ------------------------------------------------------
+##!/bin/bash
+ROSEWATER="#f5e0dc";
+FLAMINGO="#f2cdcd";
+PINK="#f5c2e7";
+MAUVE="#cba6f7";
+RED="#f38ba8";
+MAROON="#eba0ac";
+PEACH="#fab387";
+YELLOW="#f9e2af";
+GREEN="#a6e3a1";
+TEAL="#94e2d5";
+SKY="#89dceb";
+SAPPHIRE="#74c7ec";
+BLUE="#89b4fa";
+LAVENDER="#b4befe";
+TEXT="#cdd6f4";
+SUBTEXT1="#bac2de";
+SUBTEXT0="#a6adc8";
+OVERLAY2="#9399b2";
+OVERLAY1="#7f849c";
+OVERLAY0="#6c7086";
+SURFACE2="#585b70";
+SURFACE1="#45475a";
+SURFACE0="#313244";
+BASE="#1e1e2e";
+MANTLE="#181825";
+CRUST="#11111b"
+
 # Color Settings ______________________________________________________________
 
-COLOR_CLOUD="#606060"
-COLOR_THUNDER="#d3b987"
-COLOR_LIGHT_RAIN="#73cef4"
-COLOR_HEAVY_RAIN="#b3deef"
-COLOR_SNOW="#FFFFFF"
-COLOR_FOG="#606060"
-COLOR_TORNADO="#d3b987"
-COLOR_SUN="#ffc24b"
-COLOR_MOON="#FFFFFF"
-COLOR_ERR="#f43753"
-COLOR_WIND="#73cef4"
-COLOR_COLD="#b3deef"
-COLOR_HOT="#f43753"
-COLOR_NORMAL_TEMP="#FFFFFF"
+COLOR_CLOUD=$OVERLAY2
+COLOR_THUNDER=$YELLOW
+COLOR_LIGHT_RAIN=$SAPPHIRE
+COLOR_HEAVY_RAIN=$BLUE
+COLOR_SNOW=$TEXT
+COLOR_FOG=$SURFACE2
+COLOR_TORNADO=$OVERLAY0
+COLOR_SUN=$PEACH
+COLOR_MOON=$SURFACE0
+COLOR_ERR=$RED
+COLOR_WIND=$SUBTEXT1
+COLOR_COLD=$BLUE
+COLOR_HOT=$RED
+COLOR_NORMAL_TEMP=$TEXT
 
 # Leave "" if you want the default polybar color
 COLOR_TEXT=""
