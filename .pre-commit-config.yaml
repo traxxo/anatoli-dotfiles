@@ -1,8 +1,27 @@
 repos:
-  - repo: https://github.com/trufflesecurity/trufflehog
-    rev: v3.88.16
+  - repo: local
     hooks:
       - id: trufflehog
-        args: [--regex, --entropy=False, --json, --max_depth=3, --exclude_paths=tests/]
-        files: .
-        types: [file]
+        name: TruffleHog
+        description: Detect secrets in your data.
+        entry: bash -c 'trufflehog git file://. --since-commit HEAD --no-verification --fail'
+        language: system
+        stages: ["commit", "push"]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: check-json
+      - id: detect-private-key
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.10
+    hooks:
+      - id: ruff
+        args: [ --fix ]
+      - id: ruff-format

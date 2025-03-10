@@ -9,4 +9,3 @@ vim.cmd([[
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
   augroup END
 ]])
-

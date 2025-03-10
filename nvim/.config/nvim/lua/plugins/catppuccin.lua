@@ -27,4 +27,3 @@ return
 }
 
 -- This snippet assumes you're using lazy.nvim to manage your plugins.
-

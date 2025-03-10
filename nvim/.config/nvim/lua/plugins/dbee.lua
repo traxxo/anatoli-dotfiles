@@ -12,4 +12,4 @@ return {
   config = function()
     require("dbee").setup(--[[optional config]])
   end,
-} 
+}

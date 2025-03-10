@@ -26,7 +26,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 plugins+=(
-  git 
+  git
   zsh-syntax-highlighting
   zsh-autosuggestions
   zsh-completions
@@ -115,4 +115,3 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
-

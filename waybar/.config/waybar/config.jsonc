@@ -3,7 +3,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["custom/os_button", "cpu", "memory", "disk"], 
+    "modules-left": ["custom/os_button", "cpu", "memory", "disk"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["custom/weather", "clock", "custom/power"],
     "hyprland/workspaces": {
