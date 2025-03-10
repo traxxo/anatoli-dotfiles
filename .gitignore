@@ -1,0 +1,91 @@
+# General backup and temp files
+*.bak
+*.swp
+*.swo
+*.swn
+*.tmp
+*~
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# System-specific cache
+.cache/
+.local/share/
+.local/state/
+
+# Hyprland
+.config/hyprland/hyprland.log
+.config/hyprland/*.bak
+.config/hyprland/.cache/
+.config/hyprland/scripts/*.log
+
+# Hyprpaper
+.config/hyprpaper/*.bak
+
+# i3
+.config/i3/*.bak
+.config/i3/i3log
+
+# Tmux
+.tmux.conf.local
+.tmux/plugins/
+
+# Zsh & Oh My Zsh
+.zsh_history
+.zsh_sessions/
+.config/zsh/zsh_history
+.config/zsh/.zsh_history
+.config/zsh/.zsh_sessions/
+
+# Powerlevel10k (p10k)
+.config/p10k/.p10k.zsh.bak
+
+# Waybar
+.config/waybar/*.bak
+.config/waybar/*.log
+
+# Alacritty
+.config/alacritty/*.bak
+
+# Ghostty
+.config/ghostty/*.bak
+
+# Kitty
+.config/kitty/*.bak
+.config/kitty/session.lock
+
+# Fonts
+.local/share/fonts/
+.config/fontconfig/conf.d/*.bak
+
+# Neovim
+.config/nvim/backup/
+.config/nvim/undo/
+.config/nvim/swap/
+.config/nvim/*.bak
+.config/nvim/.nvimlog
+
+# Picom
+.config/picom/*.bak
+
+# Polybar
+.config/polybar/*.bak
+.config/polybar/logs/
+
+# Rofi
+.config/rofi/*.bak
+.config/rofi/config.rasi.bak
+
+# Other potential sensitive files
+.ssh/
+.gnupg/
+.secrets/
+*.pem
+*.key
+*.crt
+*.env
+*.k
+

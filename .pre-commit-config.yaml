@@ -1,0 +1,8 @@
+repos:
+  - repo: https://github.com/trufflesecurity/trufflehog
+    rev: v3.88.16
+    hooks:
+      - id: trufflehog
+        args: [--regex, --entropy=False, --json, --max_depth=3, --exclude_paths=tests/]
+        files: .
+        types: [file]
