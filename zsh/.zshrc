@@ -46,6 +46,8 @@ alias lt='eza --tree'
 # Aliases for k8s
 alias k='kubectl'
 alias kg='kubectl get'
+alias kgp='kubectl get pods'
+alias kgs='kubectl get svc'
 alias kd='kubectl describe'
 alias klo='kubectl logs -f'
 alias klof='kubectl logs -f --tail=100'
@@ -63,6 +65,9 @@ alias lg='lazygit'
 alias tf='terraform'
 alias nv='nvim'
 
+# flux
+alias f='flux'
+alias fr='flux reconcile'
 # Setup fzf
 if [ -f /usr/share/fzf/key-bindings.zsh ]; then
   source /usr/share/fzf/key-bindings.zsh
