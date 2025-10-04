@@ -29,6 +29,12 @@
 	"tooltip": false,
 	"on-click": "kitty -e unimatrix -s 96"
     },
+    "custom/nordvpn": {
+	"format": " 󰖯  {rofi-nordvpn -s }",
+	"interval": 60,
+	"tooltip": "NordVPN",
+	"on-click": "nordvpn connect"
+    },
     "custom/weather": {
 	"format": "  󰼶   ",
      },
